@@ -734,12 +734,13 @@ button {
 .modal-close-btn:hover {
     fill: #ffffff;
     background-color: #404bbf;
+    border: none;
 }
 
 .modal-close-btn:focus{
     fill: #ffffff;
     background-color: #404bbf;
-    
+    border: none;
 }
 
 .close-btn-icon {
@@ -858,9 +859,9 @@ button {
 
 input[type='checkbox']:checked + 
 .modal-agreement-text .modal-checkbox {
-    background-color: #404bbf;
+    fill: #404bbf;
     border: 1px solid #404bbf;
-    
+    border: none;
 }
 
 
