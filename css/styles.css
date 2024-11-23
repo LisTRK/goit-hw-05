@@ -654,6 +654,7 @@ button {
 
     font-weight: 500;
     letter-spacing: 0.04em;
+    line-height: 1.5;
     text-align: center;
     color: #fff;
     border: none;
@@ -683,8 +684,7 @@ button {
     visibility: hidden;
     pointer-events: none;
 
-    transition: 300ms ease-in;
-    transition-property: opacity visibility;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -707,6 +707,8 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 72px 24px 24px 24px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -724,16 +726,25 @@ button {
     border: 1px solid rgba(0, 0, 0, 0.1);
     fill: #2e2f42;
 
-    transition: 100ms ease-in;
-    transition-property: background-color fill;
+    transition: background-color 250ms 
+    cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 
 .modal-close-btn:hover {
-    background-color:#404bbf;
-    fill: #fff;
+    fill: #ffffff;
+    background-color: #404bbf;
 }
 
-.close-btn-icon {}
+.modal-close-btn:focus{
+    fill: #ffffff;
+    background-color: #404bbf;
+    
+}
+
+.close-btn-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
  
 .modal-text {
     font-weight: 500;
@@ -771,9 +782,9 @@ button {
     
     padding: 8px 38px;
     outline: transparent;
+    background-color: transparent;
 
-    transition: 100ms ease-in;
-    transition-property: border;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
@@ -797,16 +808,19 @@ button {
     fill: #2E2F42;
     pointer-events: none;
 
-    transition: 100ms ease-in;
-    transition-property: fill;
+    transition: fill 250ms 
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus + .modal-input-icon {
     fill: #4d5ae5;
 }
 
+.textarea-box {
+    margin-bottom: 16px;
+}
 
-.modal-meassage {
+.modal-comment {
     padding: 8px 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
@@ -818,18 +832,22 @@ button {
     font-size: 12px;
     line-height: 117%;
     letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
     
-    transition: 100ms ease-in;
-    transition-property: border;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: border-color;
 }
 
-.modal-meassage:focus {
+.modal-comment:focus {
     border: 1px solid #4d5ae5;
 }
 
-.modal-meassage::placeholder {
+.modal-comment::placeholder {
     color: rgba(46, 47, 66, 0.4);
 }
+
+
 
 /* #region CheckBox */
 
@@ -866,8 +884,11 @@ input[type='checkbox']:checked +
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
 
-    transition: 150ms ease-in;
-    transition-property: background-color border;
+    transition: background-color 250ms 
+        cubic-bezier(0.4, 0, 0.2, 1), 
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
 }
 
 .modal-agreement-link {
@@ -898,7 +919,8 @@ input[type='checkbox']:focus-visible +
 .modal-checkbox {
     outline: 2px solid #4d5ae5;
     outline-offset: 2px;
-
+    border: none;
+    fill: #F4F4FD;
 }
 
 .modal-agreement-btn {
