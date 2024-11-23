@@ -679,13 +679,22 @@ button {
     opacity: 0;
     pointer-events: none;
 
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 300ms ease-in;
+    transition-property: opacity visibility;
 }
+
+
 
 .backdrop.is-open {
     visibility: visible;
     pointer-events: all;
     opacity: 1;
 }
+
 
 .modal {
     border-radius: 4px;
@@ -825,6 +834,10 @@ button {
 /* #region CheckBox */
 
 
+.modal-agreement {
+    margin-bottom: 24px;
+}
+
 input[type='checkbox']:checked + 
 .modal-agreement-text .modal-checkbox {
     background-color: #404bbf;
@@ -886,6 +899,17 @@ input[type='checkbox']:focus-visible +
     outline: 2px solid #4d5ae5;
     outline-offset: 2px;
 
+}
+
+.modal-agreement-btn {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #fff;
+    min-width: 169px;
+    height: 56px;
+    padding: 16px 32px;
 }
 /* #end region CheckBox*/
 
